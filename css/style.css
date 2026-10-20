@@ -186,3 +186,5 @@ body{background-image:radial-gradient(rgba(197,168,128,.12) 1px,transparent 1.2p
 .wishbox.show span{animation:wordIn .5s backwards}
 @keyframes wordIn{from{opacity:0;filter:blur(6px);transform:translateY(8px)}}
 @keyframes glowpulse{0%{box-shadow:0 0 0 rgba(255,226,160,0)}40%{box-shadow:0 0 50px rgba(232,205,150,.85),0 14px 30px rgba(58,46,43,.14)}100%{box-shadow:0 14px 30px rgba(58,46,43,.14)}}
+.photo .pic{aspect-ratio:auto;display:block;background:none}
+.photo img{height:auto;object-fit:contain}
