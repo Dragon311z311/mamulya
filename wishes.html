@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2C3E35">
+<title>Печенье с предсказанием</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="wishes">
+<nav class="bar"><a href="menu.html">← Назад</a></nav>
+<!-- ПЕЧЕНЬЕ С ПРЕДСКАЗАНИЕМ. Пожелания лежат в js/wishes.js, там их можно менять. -->
+<div class="inner wishpage"><h2>Печенье с предсказанием</h2><p class="orn">✦</p>
+<p class="lead">Нажми на печенье. Пожеланий здесь 365, как дней в году.</p>
+<!-- СЦЕНА С ПЕЧЕНЬЕМ. Сами пожелания лежат в js/wishes.js -->
+<div class="altar idle" id="stage">
+  <canvas id="fx"></canvas><div class="rays"></div><div class="halo"></div>
+  <div class="cookie"><svg viewBox="0 0 300 220" width="280" height="205" aria-hidden="true">
+<defs>
+<path id="pl" d="M150 62 C122 28 50 26 27 84 C8 134 54 184 108 188 C130 190 146 180 150 166 C140 130 140 96 150 62 Z"/><path id="pr" d="M150 62 C178 28 250 26 273 84 C292 134 246 184 192 188 C170 190 154 180 150 166 C160 130 160 96 150 62 Z"/>
+<clipPath id="cl"><use href="#pl"/></clipPath><clipPath id="cr"><use href="#pr"/></clipPath>
+<linearGradient id="ckb" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#F8E0A8"/><stop offset=".45" stop-color="#E0AC62"/><stop offset="1" stop-color="#B9792E"/></linearGradient>
+<radialGradient id="ckv" cx=".5" cy=".45" r=".62"><stop offset=".62" stop-color="#6B3A0C" stop-opacity="0"/><stop offset="1" stop-color="#6B3A0C" stop-opacity=".55"/></radialGradient>
+<radialGradient id="ckh"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .42  0 0 0 0 .24  0 0 0 0 .06  0 0 1.3 0 -.4"/></filter>
+</defs>
+<ellipse class="sh" cx="150" cy="206" rx="104" ry="10"/>
+<path class="tip" d="M143 72 L170 38 L184 48 L154 82 Z" fill="#FFFDF8" stroke="#D4C3A3" stroke-width="1.5"/>
+<g class="half l"><use href="#pl" fill="url(#ckb)" stroke="#8F5A1E" stroke-width="2.5" stroke-linejoin="round"/><use href="#pl" fill="url(#ckv)"/>
+<rect width="300" height="220" filter="url(#grain)" opacity=".5" clip-path="url(#cl)"/>
+<g clip-path="url(#cl)"><path d="M150 62 C140 96 140 130 150 166" fill="none" stroke="#4E2B0C" stroke-width="7" opacity=".75"/><path d="M148 66 C118 80 84 104 58 156" fill="none" stroke="#8A5418" stroke-width="3" opacity=".35"/><path d="M141 74 C114 88 88 110 66 152" fill="none" stroke="#fff" stroke-width="2.2" opacity=".28"/>
+<ellipse cx="88" cy="70" rx="38" ry="14" fill="url(#ckh)" transform="rotate(-25 88 70)"/><g fill="#FFF2CF" opacity=".7"><circle cx="60" cy="110" r="2"/><circle cx="84" cy="140" r="1.6"/><circle cx="46" cy="96" r="1.4"/><circle cx="104" cy="100" r="1.8"/><circle cx="120" cy="150" r="1.5"/></g></g>
+<path class="crackln" d="M150 56 L142 86 L158 108 L141 132 L156 152 L150 172" fill="none" stroke="#FFF3C8" stroke-width="3" stroke-linejoin="round"/></g>
+<g class="half r"><use href="#pr" fill="url(#ckb)" stroke="#8F5A1E" stroke-width="2.5" stroke-linejoin="round"/><use href="#pr" fill="url(#ckv)"/>
+<rect width="300" height="220" filter="url(#grain)" opacity=".5" clip-path="url(#cr)"/>
+<g clip-path="url(#cr)"><path d="M150 62 C160 96 160 130 150 166" fill="none" stroke="#4E2B0C" stroke-width="7" opacity=".75"/><path d="M152 66 C182 80 216 104 242 156" fill="none" stroke="#8A5418" stroke-width="3" opacity=".35"/><path d="M159 74 C186 88 212 110 234 152" fill="none" stroke="#fff" stroke-width="2.2" opacity=".28"/>
+<ellipse cx="212" cy="70" rx="38" ry="14" fill="url(#ckh)" transform="rotate(25 212 70)"/><g fill="#FFF2CF" opacity=".7"><circle cx="240" cy="110" r="2"/><circle cx="216" cy="140" r="1.6"/><circle cx="254" cy="96" r="1.4"/><circle cx="196" cy="100" r="1.8"/><circle cx="180" cy="150" r="1.5"/></g></g>
+</g>
+</svg></div>
+  <div class="paper"></div><div class="ring"></div><div class="ring r2"></div><div class="flash"></div>
+  <p class="hint">Нажми на печенье</p>
+</div>
+<!-- КАРТОЧКА С ПОЖЕЛАНИЕМ: появляется под сценой после раскрытия печенья -->
+<div class="wishbox" id="wishbox"><p id="wish"></p></div>
+<p class="wcount" id="wishCount"></p>
+<button class="btn" id="cookieBtn">Открыть печенье</button></div>
+<script src="js/wishes.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/data.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

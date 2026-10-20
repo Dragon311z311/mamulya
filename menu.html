@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2C3E35">
+<title>Твой подарок</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+<!-- МЕНЮ. Разделы открываются по порядку. Печенье с предсказанием открыто всегда. -->
+<nav class="bar"><a href="index.html">← Назад</a></nav>
+<main class="menu">
+  <header><h2>Твой подарок</h2><p>Открывай по порядку: каждый шаг открывает следующий</p></header>
+  <a class="wishcard" href="wishes.html"><span class="cookie-ic">🥠</span><span class="txt"><b>Печенье с предсказанием</b><small>365 пожеланий, по одному на каждый день. Открыто всегда</small></span><span class="state">→</span></a>
+  <p class="orn">✦ ✦ ✦</p>
+  <div class="path">
+<a class="step" data-step="moments" href="moments.html"><span class="num">I</span><span class="txt"><b>10 особенных моментов</b><small>Наши фотографии</small></span><span class="state">→</span></a>
+<a class="step" data-step="promises" href="promises.html"><span class="num">II</span><span class="txt"><b>Мои обещания тебе</b><small>Десять искренних слов</small></span><span class="state">→</span></a>
+<a class="step" data-step="warm" href="warm.html"><span class="num">III</span><span class="txt"><b>Что-то милое и согревающее</b><small>Нажми и согрейся</small></span><span class="state">→</span></a>
+<a class="step" data-step="letter" href="letter.html"><span class="num">IV</span><span class="txt"><b>Письмо для мамы</b><small>Несколько слов от сердца</small></span><span class="state">→</span></a>
+<a class="step final" data-step="final" href="final.html"><span class="num">V</span><span class="txt"><b>Вместо заключения...</b><small>Самое главное</small></span><span class="state">→</span></a>
+  </div>
+</main>
+<script src="js/data.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
